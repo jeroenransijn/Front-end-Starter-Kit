@@ -1,0 +1,6 @@
+{
+	"scripts": [
+		"/js/setup.js",
+		"/js/main.js"
+	]
+}
