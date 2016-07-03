@@ -26,7 +26,9 @@ Project should run on node v5.*
 ## Git workflow
 
 There are two main branches: `master` and `dev`.
-Feature branches will be deleted when merged from feature branch to dev and then to master. Feature branches will be prepended with `Feature/`.
+Feature branches will be deleted when merged from feature branch to dev and then to master. Feature branches will be prepended with `feature/feature-name`.
+
+**Need a git refresher?**: [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 
 ## Sass structure
 
