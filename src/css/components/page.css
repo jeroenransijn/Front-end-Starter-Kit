@@ -15,36 +15,3 @@
 		font-size: var(--font-size-100);
 	}
 }
-
-.Page-section {
-	@apply --clearfix;
-}
-
-.Page-inner {
-	position: relative;
-	margin-right: auto;
-	margin-left: auto;
-	max-width: 1180px;
-
-	@media (--range-hand) {
-		padding: 0 5%;
-	}
-
-	@media (--range-lap) {
-		padding: 0 7.5%;
-	}
-
-	@media (--range-desk) {
-		padding: 0 120px;
-	}
-}
-
-.Page-inner--narrow {
-	max-width: 860px;
-}
-
-.Page-inner--full-width-on-mobile {
-	@media (--range-hand) {
-		padding: 0;
-	}
-}

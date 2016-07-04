@@ -1,0 +1,31 @@
+.Pane {
+	@apply --clearfix;
+}
+
+.Pane--rounded {
+	border-radius: 3px;
+}
+
+.Pane--light {
+	background-color: var(--color-light);
+	color: var(--color-light-text);
+}
+
+.Pane--tint {
+	background-color: var(--color-tint);
+	color: var(--color-tint-text);
+}
+
+.Pane--darkerTint {
+	background-color: var(--color-darkerTint);
+	color: var(--color-darkerTint-text);
+}
+
+.Pane--dark {
+	background-color: var(--color-dark);
+	color: var(--color-dark-text);
+}
+
+.Pane-content {
+	margin: 1em;
+}

@@ -84,16 +84,81 @@ Modifiers are still used in cases where there is a dependency on the main compon
 
 ## Names of media queries should be based on the context of a device
 
-*This section is copied from CSS Conventions by [CSS Conventions by Bart van de Biezen](https://github.com/bartvandebiezen/css-conventions)*
+*This section is a modified version of how media queries are handled in CSS Conventions by [CSS Conventions by Bart van de Biezen](https://github.com/bartvandebiezen/css-conventions)*
 
 - There are major and minor ranges.
 - Major ranges should be based on the context of a device.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
 - Breakpoints should only be used if the content requires it.
-Visual presentation of ranges:
+
+### Visual presentation of ranges
 
 ```
----palm--|--hand--|--lap--|--desk---
+Visual presentation of major and minor ranges:
+major: ---palm----|----hand---|----lap----|---desk------*
+minor: _s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l___*
+
+```
+
+### Custom media ranges values
+
+```CSS
+/**
+ * palm
+ * major: 0-440
+ * minor: 0-360-400-440
+ * interval: 40px
+ */
+@custom-media --range-palm   (width <= 440px);
+@custom-media --range-palm-s (width <= 360px);
+@custom-media --range-palm-m (width > 360px) and (width <= 400px);
+@custom-media --range-palm-l (width > 400px) and (width <= 440px);
+
+/**
+ * hand
+ * major: 440–620
+ * minor: 440-500-560-620
+ * interval: 60px
+ */
+@custom-media --range-hand   (width > 440px) and (width <= 620px);
+@custom-media --range-hand-s (width > 440px) and (width <= 480px);
+@custom-media --range-hand-m (width > 480px) and (width <= 520px);
+@custom-media --range-hand-l (width > 520px) and (width <= 560px);
+
+/**
+ * lap
+ * major: 620–980
+ * minor: 620–740–860–980
+ * interval: 120px
+ */
+@custom-media --range-lap   (width > 620px) and (width <= 980px);
+@custom-media --range-lap-s (width > 620px) and (width <= 720px);
+@custom-media --range-lap-m (width > 740px) and (width <= 860px);
+@custom-media --range-lap-l (width > 860px) and (width <= 980px);
+
+/**
+ * desk
+ * major: 980–*
+ * minor: 980–1120–1260–1400–*
+ * interval: 140px
+ */
+```
+
+```CSS
+.MyComponent {
+	@media (--range-palm) {
+    margin: 40px 0;
+  }
+
+  @media (--range-hand) {
+    margin: 40px 0;
+  }
+
+	/* Combine ranges */
+  @media (--range-lap), (--range-desk) {
+    margin: 120px 0;
+  }
+}
 ```
 
 ## Acknowledgements and Further Reading

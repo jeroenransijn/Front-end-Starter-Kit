@@ -1,11 +1,16 @@
 const path = require('path');
 const express = require('express');
-const mustacheExpress = require('mustache-express');
+const nunjucks = require('nunjucks');
 const config = require('config');
 const marked = require('marked');
 const fs = require('fs');
 
 const app = express();
+
+nunjucks.configure('views', {
+	autoescape: true,
+	express: app
+});
 
 // Set up a directory for static resources
 app.use(express.static(path.join(__dirname, 'static')));
@@ -15,17 +20,20 @@ if (app.get('env') === 'development') {
 	app.use(express.static(path.join(__dirname, 'src')));
 }
 
-// Register '.mustache' extension
-app.engine('mustache', mustacheExpress());
+// Set Nunjucks as rendering engine for pages with .html suffix
+app.engine('html', nunjucks.render);
 
-app.set('view engine', 'mustache');
-app.set('views', __dirname + '/views');
-
+/**
+ * Homepage
+ */
 app.get('/', (req, res) => {
-	res.render('index', {
-		scripts: config.get('scripts'),
+	res.render('pages/index.html', {
 		content: marked(fs.readFileSync('./README.md', { encoding: 'utf8' }))
 	});
+});
+
+app.get('/:page', (req, res) => {
+	res.render(`pages/${req.params.page}.html`);
 });
 
 app.listen(3000, () => {

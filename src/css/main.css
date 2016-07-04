@@ -17,5 +17,8 @@
 /* @import 'fonts/name-of-custom-font'; */
 
 /* Components */
+@import 'components/grid';
+@import 'components/pane';
 @import 'components/page';
+@import 'components/container';
 @import 'components/content';

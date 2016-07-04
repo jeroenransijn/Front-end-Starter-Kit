@@ -18,13 +18,12 @@ const settings = {
 
 	/**
 	 * Minimatch patterns to run stylefmt on
-	 * This is not run on reset
+	 * This is not run on reset and settings
 	 */
 	cssFormatting: [
 		'**/src/css/main.css',
 		'**/src/css/components/**/*.css',
-		'**/src/css/utilities/**/*.css',
-		'**/src/css/settings/**/*.css'
+		'**/src/css/utilities/**/*.css'
 	],
 
 	/**

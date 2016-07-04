@@ -2,22 +2,22 @@
 	/* Descriptive colors */
 
 	/* Greys */
-	--color-charcoal-grey: #54585E;
+	--color-charcoal-grey: #54585e;
 	--color-slate-grey: #707479;
-	--color-fog-grey: #B7BDC4;
-	--color-sand-grey: #FAFAFB;
-
-	--color-red: #EB5C2C;
-	--color-orange: #FAC54A;
+	--color-fog-grey: #b7bdc4;
+	--color-sand-grey: #fafafb;
+	--color-red: #eb5c2c;
+	--color-orange: #fac54a;
 	--color-green: #089972;
-	--color-blue: #4A90E2;
+	--color-blue: #4a90e2;
 
 	/* Functional colors */
-
 	--color-light: white;
 	--color-light-text: #222;
 	--color-dark: var(--color-charcoal-grey);
 	--color-dark-text: white;
 	--color-tint: var(--color-sand-grey);
 	--color-tint-text: black;
+	--color-darkerTint: color(var(--color-tint) blackness(10%));
+	--color-darkerTint-text: black;
 }

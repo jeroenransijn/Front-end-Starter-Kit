@@ -27,8 +27,12 @@
 		font-weight: var(--font-weight-bold);
 		line-height: var(--line-height-30);
 
-		@media (--range-hand) {
+		@media (--range-palm) {
 			font-size: var(--font-size-300);
+		}
+
+		@media (--range-hand) {
+			font-size: var(--font-size-400);
 		}
 
 		@media (--range-lap) {
@@ -46,8 +50,12 @@
 		font-weight: var(--font-weight-bold);
 		line-height: var(--line-height-40);
 
-		@media (--range-hand) {
+		@media (--range-palm) {
 			font-size: var(--font-size-200);
+		}
+
+		@media (--range-hand) {
+			font-size: var(--font-size-300);
 		}
 
 		@media (--range-lap) {
@@ -65,8 +73,12 @@
 		font-weight: var(--font-weight-bold);
 		line-height: var(--line-height-50);
 
-		@media (--range-hand) {
+		@media (--range-palm) {
 			font-size: var(--font-size-100);
+		}
+
+		@media (--range-hand) {
+			font-size: var(--font-size-200);
 		}
 
 		@media (--range-lap) {
@@ -84,7 +96,7 @@
 		font-weight: var(--font-weight-bold);
 		line-height: var(--line-height-50);
 
-		@media (--range-hand) {
+		@media (--range-palm), (--range-hand) {
 			font-size: var(--font-size-80);
 		}
 
@@ -121,11 +133,10 @@
 	& p,
 	& ul,
 	& ol {
-		max-width: 35em;
 		font-size: var(--font-size-100);
 		line-height: var(--line-height-100);
 
-		@media (--range-hand) {
+		@media (--range-palm), (--range-hand) {
 			font-size: var(--font-size-90);
 		}
 	}
@@ -164,7 +175,7 @@
 			letter-spacing: -0.2em;
 		}
 
-		@media (--range-hand) {
+		@media (--range-palm), (--range-hand) {
 			font-size: var(--font-size-70);
 		}
 	}
@@ -187,12 +198,48 @@
 			}
 		}
 
-		@media (--range-hand) {
+		@media (--range-palm), (--range-hand) {
 			padding: 0.5em;
 		}
 
 		@media (--range-lap), (--range-desk) {
 			padding: 1em;
+		}
+	}
+}
+
+.Content--article {
+	& p,
+	& ul,
+	& ol {
+		max-width: 35em;
+	}
+}
+
+.Content--centered {
+	text-align: center;
+}
+
+.Content--titleGroup {
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6,
+	& p {
+		&:first-child {
+			margin-bottom: 0;
+		}
+
+		& + h1,
+		& + h2,
+		& + h3,
+		& + h4,
+		& + h5,
+		& + h6,
+		& + p {
+			margin-top: 0;
 		}
 	}
 }
