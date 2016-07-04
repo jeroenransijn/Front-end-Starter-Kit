@@ -16,8 +16,8 @@
 
 	--color-light: white;
 	--color-light-text: #222;
-	--color-dark: $color-charcoal-grey;
+	--color-dark: var(--color-charcoal-grey);
 	--color-dark-text: white;
-	--color-tint: $color-sand-grey;
+	--color-tint: var(--color-sand-grey);
 	--color-tint-text: black;
 }

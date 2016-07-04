@@ -10,8 +10,8 @@
 @import 'utilities/clearfix';
 
 /* Reset */
-/*@import 'reset/reset';*/
-/*@import 'reset/box-sizing';*/
+@import 'reset/reset';
+@import 'reset/box-sizing';
 
 /* Fonts */
 /* @import 'fonts/name-of-custom-font'; */
