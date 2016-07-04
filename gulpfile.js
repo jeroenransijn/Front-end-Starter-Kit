@@ -2,9 +2,7 @@
 const gulp = require('gulp');
 const csscomb = require('gulp-csscomb');
 const postcss = require('gulp-postcss');
-const cssnext = require('postcss-cssnext');
 const sourcemaps = require('gulp-sourcemaps');
-const cssnano = require('cssnano');
 const plumber = require('gulp-plumber');
 const minimatch = require('minimatch');
 const rename = require('gulp-rename');
@@ -81,14 +79,14 @@ function watch () {
 }
 gulp.task('watch', watch);
 
-function styles () {
+function styles () {	
 	const processors = [
 		require('postcss-import'),
-		cssnext({
+		require('postcss-cssnext')({
 			browsers: ['last 1 version'],
 			warnForDuplicates: false
 		}),
-		cssnano(),
+		require('cssnano')(),
 		require('postcss-browser-reporter')
 	];
 
