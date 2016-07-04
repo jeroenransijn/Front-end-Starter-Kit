@@ -1,4 +1,4 @@
-@mixin clearfix {
+.u-clearfix {
 	&:before,
 	&:after {
 		content: "";

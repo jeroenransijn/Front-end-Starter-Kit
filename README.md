@@ -28,11 +28,11 @@ Project should run on node v5.*
 There are two main branches: `master` and `dev`.
 Feature branches will be deleted when merged from feature branch to dev and then to master. Feature branches will be prepended with `feature/feature-name`.
 
-**Need a git refresher?**: [git - the simple guide](http://rogerdudler.github.io/git-guide/)
+**Need a git refresher?** [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 
-## Sass structure
+## CSS structure
 
-The Sass structure is as follows (in import order):
+The CSS structure is as follows (in import order):
 
 - `settings` contains variables only
 - `utilities` contains mixins only
@@ -81,6 +81,30 @@ Modifiers are still used in cases where there is a dependency on the main compon
 <div class="SearchResult SearchResult--highlight"></div>
 <div class="SearchResult"></div>
 ```
+
+## Names of media queries should be based on the context of a device
+
+*This section is copied from CSS Conventions by [CSS Conventions by Bart van de Biezen](https://github.com/bartvandebiezen/css-conventions)*
+
+- There are major and minor ranges.
+- Major ranges should be based on the context of a device.
+- Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
+- Breakpoints should only be used if the content requires it.
+Visual presentation of ranges:
+
+```
+---palm--|--hand--|--lap--|--desk---
+```
+
+## Acknowledgements and Further Reading
+
+Most of this project is a remix of my own experience and the work of many others:
+
+- [Solved by Flexbox](https://github.com/philipwalton/solved-by-flexbox)
+- [BEM syntax with UX in mind](http://montagestudio.com/blog/2013/10/24/bem-syntax-with-ux-in-mind/)
+- [SUIT CSS](https://suitcss.github.io/)
+- [Learn to Code HTML & CSS by Shay Howe](http://learn.shayhowe.com/)
+- [CSS Conventions by Bart van de Biezen](https://github.com/bartvandebiezen/css-conventions)
 
 ## Author & License
 

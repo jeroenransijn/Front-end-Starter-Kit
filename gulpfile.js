@@ -1,7 +1,8 @@
 'use strict';
 const gulp = require('gulp');
 const csscomb = require('gulp-csscomb');
-const sass = require('gulp-sass');
+// const sass = require('gulp-sass');
+const cssnext = require('gulp-cssnext');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const minimatch = require('minimatch');
@@ -10,6 +11,7 @@ const nodemon = require('gulp-nodemon');
 const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const gutil = require('gulp-util');
 const autoprefixer = require('autoprefixer');
 const config = require('config');
 
@@ -36,8 +38,8 @@ const settings = {
 	 * Source settings
 	 */
 	src: {
-		main: 'src/scss/main.scss',
-		scss: ['src/scss/**/*.scss']
+		main: 'src/css/main.css',
+		css: ['src/css/**/*.css']
 	}
 };
 
@@ -51,8 +53,13 @@ function isMatched (arr, match) {
 	return !! arr.filter((item) => minimatch(match, item)).length;
 }
 
+function streamError(err) {
+	gutil.beep();
+	gutil.log(err instanceof gutil.PluginError ? err.toString() : err.stack);
+}
+
 function watch () {
-	gulp.watch(settings.src.scss, (event) => {
+	gulp.watch(settings.src.css, (event) => {
 
 		// Always perfectly format CSS across the team with CSS Comb
 		if (isMatched(settings.cssComb, event.path)) {
@@ -65,7 +72,7 @@ function watch () {
 
 			// Only comb the current file if it matches the settings
 			gulp.src(event.path, { base: base })
-				.pipe(plumber())
+				.pipe(plumber({ errorHandler: streamError }))
 				.pipe(csscomb())
 				.pipe(gulp.dest(base));
 		}
@@ -77,10 +84,12 @@ gulp.task('watch', watch);
 
 function styles () {
 	gulp.src(settings.src.main)
-		.pipe(sourcemaps.init())
-		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-		.pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-		.pipe(sourcemaps.write('.'))
+		.pipe(plumber({ errorHandler: streamError }))
+		.pipe(cssnext({
+			browsers: '> 1%, last 2 versions, Safari > 5, ie > 9, Firefox ESR',
+			compress: true,
+			url: false
+		}))
 		.pipe(gulp.dest(settings.dist.css));
 }
 gulp.task('styles', styles);
@@ -100,11 +109,12 @@ function scripts () {
 gulp.task('scripts', scripts);
 
 function serve () {
-	console.log(process.env.NODE_ENV);
+	const env = process.env.NODE_ENV || 'development';
+	console.log('NODE_ENV:', env);
 	nodemon({
 		script: 'app.js',
 		ext: 'js html json mustache',
-		env: { 'NODE_ENV': process.env.NODE_ENV || 'development' }
+		env: { 'NODE_ENV': env }
 	}).on('readable', function () {
 		this.stdout.on('data', (chunk) => {
 			process.stdout.write(chunk);
