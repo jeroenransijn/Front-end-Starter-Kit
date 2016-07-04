@@ -7,8 +7,13 @@
  *
  * Usage example:
  * .MyComponent {
+ *
  *   @media (--range-hand) {
  *     margin: 40px 0;
+ *   }
+ *
+ *   @media (--range-lap), (--range-desk) {
+ *     margin: 120px 0;
  *   }
  * }
  */
@@ -19,7 +24,7 @@
  * minor: 0-380-440-500-560
  * interval: 60px
  */
-@custom-media --range-hand    (width <= 580px);
+@custom-media --range-hand    (width <= 560px);
 @custom-media --range-hand-s  (width <= 380px);
 @custom-media --range-hand-m  (width > 380px) and (width <= 440px);
 @custom-media --range-0-hand-m  (width <= 440px);

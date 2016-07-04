@@ -1,8 +1,14 @@
-.u-clearfix {
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
+:root {
+	--clearfix: {
+		&:before,
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
 	}
+}
+
+.u-clearfix {
+	@apply --clearfix;
 }

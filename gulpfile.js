@@ -1,18 +1,17 @@
 'use strict';
 const gulp = require('gulp');
 const csscomb = require('gulp-csscomb');
-// const sass = require('gulp-sass');
-const cssnext = require('gulp-cssnext');
+const postcss = require('gulp-postcss');
+const cssnext = require('postcss-cssnext');
 const sourcemaps = require('gulp-sourcemaps');
+const cssnano = require('cssnano');
 const plumber = require('gulp-plumber');
 const minimatch = require('minimatch');
 const rename = require('gulp-rename');
 const nodemon = require('gulp-nodemon');
-const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
-const autoprefixer = require('autoprefixer');
 const config = require('config');
 
 const settings = {
@@ -22,8 +21,8 @@ const settings = {
 	 * This is not run on utils and settings
 	 */
 	cssComb: [
-		'**/src/scss/main.scss',
-		'**/src/scss/components/**/*.scss'
+		'**/src/css/main.css',
+		'**/src/css/components/**/*.css'
 	],
 
 	/**
@@ -83,13 +82,21 @@ function watch () {
 gulp.task('watch', watch);
 
 function styles () {
+	const processors = [
+		require('postcss-import'),
+		cssnext({
+			browsers: ['last 1 version'],
+			warnForDuplicates: false
+		}),
+		cssnano(),
+		require('postcss-browser-reporter')
+	];
+
 	gulp.src(settings.src.main)
 		.pipe(plumber({ errorHandler: streamError }))
-		.pipe(cssnext({
-			browsers: '> 1%, last 2 versions, Safari > 5, ie > 9, Firefox ESR',
-			compress: true,
-			url: false
-		}))
+		.pipe(sourcemaps.init())
+		.pipe(postcss(processors))
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(settings.dist.css));
 }
 gulp.task('styles', styles);
