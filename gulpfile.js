@@ -1,8 +1,10 @@
 'use strict';
+const fs = require('fs');
 const gulp = require('gulp');
-const csscomb = require('gulp-csscomb');
+const vanillaPostcss = require('postcss');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
+const stylefmt = require('stylefmt');
 const plumber = require('gulp-plumber');
 const minimatch = require('minimatch');
 const rename = require('gulp-rename');
@@ -15,12 +17,14 @@ const config = require('config');
 const settings = {
 
 	/**
-	 * Minimatch patterns to run CSS comb on
-	 * This is not run on utils and settings
+	 * Minimatch patterns to run stylefmt on
+	 * This is not run on reset
 	 */
-	cssComb: [
+	cssFormatting: [
 		'**/src/css/main.css',
-		'**/src/css/components/**/*.css'
+		'**/src/css/components/**/*.css',
+		'**/src/css/utilities/**/*.css',
+		'**/src/css/settings/**/*.css'
 	],
 
 	/**
@@ -55,31 +59,7 @@ function streamError(err) {
 	gutil.log(err instanceof gutil.PluginError ? err.toString() : err.stack);
 }
 
-function watch () {
-	gulp.watch(settings.src.css, (event) => {
-
-		// Always perfectly format CSS across the team with CSS Comb
-		if (isMatched(settings.cssComb, event.path)) {
-			// [Using event.path for source and destination](https://github.com/gulpjs/gulp/issues/212)
-			// Split the filename from the path.
-			let filename = event.path.split('/');
-			filename = filename[filename.length - 1];
-			// For some reason it needs a base to work
-			const base = event.path.replace(filename, '');
-
-			// Only comb the current file if it matches the settings
-			gulp.src(event.path, { base: base })
-				.pipe(plumber({ errorHandler: streamError }))
-				.pipe(csscomb())
-				.pipe(gulp.dest(base));
-		}
-
-		styles();
-	});
-}
-gulp.task('watch', watch);
-
-function styles () {	
+function styles () {
 	const processors = [
 		require('postcss-import'),
 		require('postcss-cssnext')({
@@ -98,6 +78,40 @@ function styles () {
 		.pipe(gulp.dest(settings.dist.css));
 }
 gulp.task('styles', styles);
+
+/**
+ * Watches the css
+ * - Runs stylefmt on file save
+ * - Runs styles and compiles all the css
+ */
+function watch () {
+	styles();
+
+	gulp.watch(settings.src.css, (event) => {
+
+		// Always perfectly format CSS across the team with stylefmt
+		if (isMatched(settings.cssFormatting, event.path)) {
+			// [Using event.path for source and destination](https://github.com/gulpjs/gulp/issues/212)
+			// Split the filename from the path.
+			let filename = event.path.split('/');
+			filename = filename[filename.length - 1];
+			// For some reason it needs a base to work
+			const base = event.path.replace(filename, '');
+
+			gulp.src(event.path, { base: base })
+				.pipe(plumber({ errorHandler: streamError }))
+				.pipe(postcss([
+					stylefmt
+				]))
+				.pipe(gulp.dest(base))
+				.on('end', styles);
+
+		} else {
+			styles();
+		}
+	});
+}
+gulp.task('watch', watch);
 
 function scripts () {
 	const scriptsInConfig = config.get('scripts').map((name) => `src${name}`);
