@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<link rel="stylesheet" href="/node_modules/css/master.css">
 		<link rel="stylesheet" href="/dist/css/main.css" />
 
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,10 +16,11 @@
 		<!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 		<link rel="shortcut icon" href="/images/favicon.ico"> -->
 	</head>
-	<body class="Page">
-		<main role="main">
+	<body class="Page Page--hasMaxWidth">
+		{% include "partials/page-header.html" %}
+		<main role="main" class="Page-content">
 			{% block main %}{% endblock %}
 		</main>
-
+		{% include "partials/page-footer.html" %}
 	</body>
 </html>

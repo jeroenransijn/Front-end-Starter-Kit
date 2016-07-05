@@ -4,6 +4,7 @@ const nunjucks = require('nunjucks');
 const config = require('config');
 const marked = require('marked');
 const fs = require('fs');
+const markdown = require('./server/markdown');
 
 const app = express();
 
@@ -23,17 +24,17 @@ if (app.get('env') === 'development') {
 // Set Nunjucks as rendering engine for pages with .html suffix
 app.engine('html', nunjucks.render);
 
-/**
- * Homepage
- */
+// Homepage
 app.get('/', (req, res) => {
 	res.render('pages/index.html', {
-		content: marked(fs.readFileSync('./README.md', { encoding: 'utf8' }))
+		content: markdown.render(fs.readFileSync('./README.md', { encoding: 'utf8' }))
 	});
 });
 
 app.get('/:page', (req, res) => {
-	res.render(`pages/${req.params.page}.html`);
+	res.render(`pages/${req.params.page}.html`, {
+		year: new Date().getFullYear()
+	});
 });
 
 app.listen(3000, () => {

@@ -6,8 +6,6 @@
 }
 
 .Content {
-	color: var(--Content-color-text);
-
 	& blockquote,
 	& dl,
 	& dd,

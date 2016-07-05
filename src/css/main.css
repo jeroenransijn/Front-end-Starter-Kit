@@ -10,8 +10,12 @@
 @import 'utilities/clearfix';
 
 /* Reset */
-@import 'reset/reset';
+@import 'reset/full-reset';
 @import 'reset/box-sizing';
+@import 'reset/custom';
+
+/* Vendor */
+@import 'highlight.js/styles/github';
 
 /* Fonts */
 /* @import 'fonts/name-of-custom-font'; */
@@ -22,3 +26,6 @@
 @import 'components/page';
 @import 'components/container';
 @import 'components/content';
+@import 'components/hero';
+@import 'components/page-header';
+@import 'components/button';

@@ -1,0 +1,17 @@
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
+}
+
+html {
+	height: 100%;
+	background-color: var(--color-tint);
+}
