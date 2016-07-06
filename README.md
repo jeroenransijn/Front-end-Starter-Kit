@@ -1,13 +1,22 @@
 # Jay's Front-end Starter Kit
-> Optimized for **responsive** websites with minimal JavaScript
+> Optimized for small **responsive** websites
 
 ## Features
 
-- Node.js + Nodemon + Express.js + Mustache
-- Opiniated Sass structure with presets
-- CSS is piped through libsass and PostCSS autoprefixer
-- Write perfect styles with CSSComb on save
+- Node.js + Express.js + Nunjucks
+- Powerful Gulp build system
+- Opiniated CSS structure with presets
+- Responsive HTML & CSS components
+- CSS is piped through cssnext
+- Write perfect CSS with stylefmt on save
 - Simple but powerful JavaScript bundler + uglifier
+
+### Use this starter kit for
+
+- Marketing websites
+- App landingspages
+- Portfolios
+- Small business websites
 
 ## Install project
 
@@ -51,56 +60,27 @@ In this project components follow the [montage](http://montagestudio.com/blog/20
 
 .MyComponent-descendentName {}
 
-/* versions instead of modifiers */
-.solid-Button {}
-.outline-Button {}
-
-/* optionally namespacing */
-.ns_OtherComponent {}
+/* optionally namespacing, not used in project by default */
+.ns-OtherComponent {}
 ```
 
-Versions are modifiers without the dependency on the main component. Versions can share modifiers with the main component name. Although the main component name can exist, it's not necessary.
+## Media queries overview
 
-```HTML
-<button class="solid-Button Button--big">Login</button>
-```
-
-```CSS
-/* Button.scss */
-.Button {} /* optional */
-.solid-Button {}
-.outline-Button {}
-
-.Button--small {}
-.Button--big {}
-```
-
-Modifiers are still used in cases where there is a dependency on the main component.
-
-```HTML
-<div class="SearchResult SearchResult--highlight"></div>
-<div class="SearchResult"></div>
-```
-
-## Names of media queries should be based on the context of a device
-
-*This section is a modified version of how media queries are handled in CSS Conventions by [CSS Conventions by Bart van de Biezen](https://github.com/bartvandebiezen/css-conventions)*
+*This section is a modified version of [CSS Conventions by Bart van de Biezen](https://github.com/bartvandebiezen/css-conventions#names-of-media-queries-should-be-based-on-the-context-of-a-device)*
 
 - There are major and minor ranges.
 - Major ranges should be based on the context of a device.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
 - Breakpoints should only be used if the content requires it.
 
-### Visual presentation of ranges
+### Visual presentation of major and minor ranges
 
 ```
-Visual presentation of major and minor ranges:
 major: ---palm----|----hand---|----lap----|---desk------*
 minor: _s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l___*
-
 ```
 
-### Custom media ranges values
+### The values of major and minor ranges
 
 ```CSS
 /**
@@ -142,11 +122,18 @@ minor: _s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l___*
  * minor: 980–1120–1260–1400–*
  * interval: 140px
  */
+@custom-media --range-desk    (width >  980px);
+@custom-media --range-desk-s  (width >  980px) and (width <= 1120px);
+@custom-media --range-desk-m  (width > 1120px) and (width <= 1260px);
+@custom-media --range-desk-l  (width > 1260px) and (width <= 1400px);
+@custom-media --range-desk-xl (width > 1400px);
 ```
 
-```CSS
+### Custom media range usage example
+
+```PostCSS
 .MyComponent {
-	@media (--range-palm) {
+  @media (--range-palm) {
     margin: 40px 0;
   }
 
@@ -154,7 +141,7 @@ minor: _s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l_|_s_|_m_|_l___*
     margin: 40px 0;
   }
 
-	/* Combine ranges */
+  /* Combine ranges */
   @media (--range-lap), (--range-desk) {
     margin: 120px 0;
   }

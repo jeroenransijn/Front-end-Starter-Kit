@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+
+{% block main %}
+<section class="Pane">
+	<div class="Container Container--verticalSpacing">
+		<div class="Content">
+			<h1>Controls</h1>
+		</div>
+
+		<div class="Grid small-Grid--full Grid--gutters">
+			<div class="Grid-cell">
+				<div class="Pane Pane--rounded">
+					<div class="Pane Pane--tint">
+						<div class="Pane-content Content Content--centered">
+							{% include "partials/solid-buttons.html" %}
+						</div>
+					</div>
+					<div class="Pane Pane--dark">
+						<div class="Pane-content Content Content--centered">
+							{% include "partials/solid-buttons.html" %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Grid-cell">
+				<div class="Pane Pane--rounded">
+					<div class="Pane Pane--tint">
+						<div class="Pane-content Content Content--centered">
+							{% include "partials/outline-buttons.html" %}
+						</div>
+					</div>
+					<div class="Pane Pane--dark">
+						<div class="Pane-content Content Content--centered">
+							{% include "partials/outline-buttons.html" %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Grid-cell">
+				<div class="Pane Pane--rounded">
+					<div class="Pane Pane--tint">
+						<div class="Pane-content Content Content--centered">
+							{% include "partials/gradient-buttons.html" %}
+						</div>
+					</div>
+					<div class="Pane Pane--dark">
+						<div class="Pane-content Content Content--centered">
+							{% include "partials/gradient-buttons.html" %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

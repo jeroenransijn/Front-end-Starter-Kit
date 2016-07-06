@@ -5,6 +5,7 @@
     "start": "NODE_ENV=production node app.js",
     "dev": "gulp",
     "build": "gulp build",
+    "format-all-css": "gulp format-all-css",
     "open": "open http://localhost:3000/"
   },
   "author": "Jeroen Ransijn",
@@ -35,7 +36,7 @@
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^2.7.0",
     "postcss-import": "^8.1.2",
-    "stylefmt": "^4.1.0",
+    "stylefmt": "^4.1.1",
     "stylelint-config-suitcss": "^7.0.0"
   }
 }

@@ -70,7 +70,8 @@ function styles () {
 	];
 
 	gulp.src(settings.src.main)
-		.pipe(plumber({ errorHandler: streamError }))
+		// Favor the browser reporter instead
+		// .pipe(plumber({ errorHandler: streamError }))
 		.pipe(sourcemaps.init())
 		.pipe(postcss(processors))
 		.pipe(sourcemaps.write('.'))
@@ -111,6 +112,16 @@ function watch () {
 	});
 }
 gulp.task('watch', watch);
+
+function formatAllCss () {
+	gulp.src(settings.cssFormatting, { base: './' })
+		.pipe(plumber({ errorHandler: streamError }))
+		.pipe(postcss([
+			stylefmt
+		]))
+		.dest(gulp.dest('.'));
+}
+gulp.task('format-all-css', formatAllCss);
 
 function scripts () {
 	const scriptsInConfig = config.get('scripts').map((name) => `src${name}`);

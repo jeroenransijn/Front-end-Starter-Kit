@@ -117,7 +117,7 @@
 		font-weight: var(--font-weight-medium);
 	}
 
-	& a {
+	& a:not(.Button) {
 		border-bottom: 1px solid color(var(--Content-color-link-text) alpha(-80%));
 		color: var(--Content-color-link-text);
 		text-decoration: none;

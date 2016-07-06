@@ -69,7 +69,7 @@
 	flex: 0 0 25%;
 }
 
-@media (--range-hand) {
+@media (--range-palm), (--range-hand) {
 	.small-Grid--fit > .Grid-cell {
 		flex: 1;
 	}

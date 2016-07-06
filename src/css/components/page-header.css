@@ -2,10 +2,8 @@
 	@apply --clearfix;
 }
 
-.PageHeader--heroOverlay {
-	position: absolute;
-	width: 100%;
-	z-index: 1;
+.PageHeader--hero {
+	background: linear-gradient(to left, #9d50bb, #6e48aa);
 	color: white;
 	-webkit-font-smoothing: antialiased;
 }

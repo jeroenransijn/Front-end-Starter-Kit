@@ -1,0 +1,15 @@
+.Banner {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.Banner-content {
+	flex: 1;
+}
+
+.Banner-figure {
+	flex: 1;
+}
+
+.Banner-figureImage {
+}

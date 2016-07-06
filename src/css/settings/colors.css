@@ -1,3 +1,6 @@
+/**
+ * Colors still need a lot of work
+ */
 :root {
 	/* Descriptive colors */
 
@@ -12,6 +15,16 @@
 	--color-blue: #4a90e2;
 
 	/* Functional colors */
+	--color-neutral: var(--color-sand-grey);
+	--color-primary: #3c74d9;
+	--color-primary-text: white;
+	--color-success: #60ae4d;
+	--color-success-text: white;
+	--color-error:   #f34248;
+	--color-error-text: white;
+	--color-warning: #fed443;
+
+	/* Theme colors */
 	--color-light: white;
 	--color-light-text: #222;
 	--color-dark: var(--color-charcoal-grey);

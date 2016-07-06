@@ -4,13 +4,13 @@
 
 .Hero {
 	@apply --clearfix;
+	position: relative;
 	display: flex;
+	overflow: hidden;
+	height: 70vh;
+	text-align: center;
 	align-items: center;
 	justify-content: center;
-	height: 70vh;
-	overflow: hidden;
-	position: relative;
-	text-align: center;
 }
 
 .Hero--backgroundImage {
@@ -22,14 +22,14 @@
 
 .Hero--hasOverlay {
 	&:before {
-		content: '';
-		display: block;
-		background-color: var(--Hero-overlay-color);
 		position: absolute;
 		top: 0;
-		left: 0;
 		right: 0;
 		bottom: 0;
+		left: 0;
+		display: block;
+		background-color: var(--Hero-overlay-color);
+		content: '';
 	}
 }
 
@@ -44,21 +44,18 @@
 	@media (--range-palm) {
 		font-size: var(--font-size-300);
 	}
-
 	@media (--range-hand) {
 		font-size: var(--font-size-400);
 	}
-
 	@media (--range-lap) {
 		font-size: var(--font-size-500);
 	}
-
 	@media (--range-desk) {
 		font-size: var(--font-size-800);
 	}
 }
 
 .Hero-content {
-	max-width: 30em;
 	margin: 0 auto;
+	max-width: 30em;
 }

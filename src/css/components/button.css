@@ -1,8 +1,209 @@
-.outline-Button {
-	box-shadow: inset 0 0 0 1px;
-	border-radius: 4px;
+.Button {
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	border: none;
+	font-size: var(--font-size-80);
+	line-height: var(--line-height-100);
+	padding: 6px 12px;
+	font-weight: var(--font-weight-bold);
+	-webkit-font-smoothing: antialiased;
+	border-radius: 3px;
+	font-family: var(--font-family-sans-serif);
 
-	&:active {
-		box-shadow: inset 0 0 0 1px;
+	&:focus,
+	&:hover,
+	&:link,
+	&:visited {
+		text-decoriation: none;
+		outline: none;
 	}
+}
+
+/**
+ * Based on the buttons from GitHub
+ */
+.Button--gradient {
+	padding: 6px 12px;
+	color: #333;
+	background-color: #eee;
+	background-image: linear-gradient(#fcfcfc, #eee);
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+
+	&:focus {
+		border-color: #51a7e8;
+		box-shadow: inset 0 0 0 1px #51a7e8, 0 0 5px rgba(81, 167, 232, 0.5);
+	}
+
+	&:hover,
+	&:active {
+		background-color: #ddd;
+		background-image: linear-gradient(#eee, #ddd);
+	}
+
+	&:active,
+	&.is-selected {
+		background-color: #dcdcdc;
+		background-image: none;
+		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+	}
+
+	&:disabled,
+	&.is-disabled {
+		&,
+		&:hover {
+			color: rgba(102, 102, 102, 0.5);
+			cursor: default;
+			background-color: rgba(229, 229, 229, 0.5);
+			background-image: none;
+			border-color: rgba(197, 197, 197, 0.5);
+			box-shadow: inset 0 0 0 1px #d5d5d5;
+		}
+	}
+}
+
+.Button--solid {
+	&.Button--primary {
+		background-color: var(--color-primary);
+		color: var(--color-primary-text);
+
+		&:active {
+			background-color: color(var(--color-primary) tint(15%));
+		}
+	}
+
+	&.Button--success {
+		background-color: var(--color-success);
+		color: var(--color-success-text);
+
+		&:active {
+			background-color: color(var(--color-success) tint(15%));
+		}
+	}
+
+	&.Button--error {
+		background-color: var(--color-error);
+		color: var(--color-error-text);
+
+		&:active {
+			background-color: color(var(--color-error) tint(20%));
+		}
+	}
+
+	&.Button--light {
+		background-color: var(--color-light);
+		color: var(--color-light-text);
+
+		&:active {
+			background-color: color(var(--color-light) shade(5%));
+		}
+	}
+
+	&.Button--dark {
+		background-color: var(--color-dark);
+		color: var(--color-dark-text);
+
+		&:active {
+			background-color: color(var(--color-dark) tint(15%));
+		}
+	}
+
+	&.Button--tint {
+		background-color: var(--color-tint);
+		color: var(--color-tint-text);
+
+		&:active {
+			background-color: color(var(--color-tint) shade(5%));
+		}
+	}
+
+	&.Button--darkerTint {
+		background-color: var(--color-darkerTint);
+		color: var(--color-darkerTint-text);
+
+		&:active {
+			background-color: color(var(--color-darkerTint) shade(5%));
+		}
+	}
+}
+
+.Button--outline {
+	background: transparent;
+
+	&.Button--primary {
+		box-shadow: inset 0 0 0 1px var(--color-primary);
+		color: var(--color-primary);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-primary) tint(45%));
+			color: color(var(--color-primary) tint(45%));
+		}
+	}
+
+	&.Button--success {
+		box-shadow: inset 0 0 0 1px var(--color-success);
+		color: var(--color-success);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-success) tint(45%));
+			color: color(var(--color-success) tint(45%));
+		}
+	}
+
+	&.Button--error {
+		box-shadow: inset 0 0 0 1px var(--color-error);
+		color: var(--color-error);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-error) tint(45%));
+			color: color(var(--color-error) tint(45%));
+		}
+	}
+
+	&.Button--light {
+		box-shadow: inset 0 0 0 1px var(--color-light);
+		color: var(--color-light);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-light) tint(45%));
+			color: color(var(--color-light) tint(45%));
+		}
+	}
+
+	&.Button--dark {
+		box-shadow: inset 0 0 0 1px var(--color-dark);
+		color: var(--color-dark);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-dark) tint(45%));
+			color: color(var(--color-dark) tint(45%));
+		}
+	}
+
+	&.Button--tint {
+		box-shadow: inset 0 0 0 1px var(--color-tint);
+		color: var(--color-tint);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-tint) shade(5%));
+			color: color(var(--color-tint) shade(5%));
+		}
+	}
+
+	&.Button--darkerTint {
+		box-shadow: inset 0 0 0 1px var(--color-darkerTint);
+		color: var(--color-darkerTint);
+
+		&:active {
+			box-shadow: inset 0 0 0 1px color(var(--color-darkerTint) shade(5%));
+			color: color(var(--color-darkerTint) shade(5%));
+		}
+	}
+}
+
+.Button--wide {
 }

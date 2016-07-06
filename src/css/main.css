@@ -24,8 +24,11 @@
 @import 'components/grid';
 @import 'components/pane';
 @import 'components/page';
+@import 'components/button';
 @import 'components/container';
 @import 'components/content';
 @import 'components/hero';
+@import 'components/banner';
+@import 'components/phone-holder';
 @import 'components/page-header';
 @import 'components/button';
