@@ -119,7 +119,7 @@ function formatAllCss () {
 		.pipe(postcss([
 			stylefmt
 		]))
-		.dest(gulp.dest('.'));
+		.pipe(gulp.dest('.'));
 }
 gulp.task('format-all-css', formatAllCss);
 

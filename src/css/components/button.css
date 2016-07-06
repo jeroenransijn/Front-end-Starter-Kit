@@ -1,38 +1,46 @@
 .Button {
 	position: relative;
 	display: inline-block;
-	white-space: nowrap;
+	padding: 0.6em 1em;
+	border: none;
+	border-radius: 3px;
 	vertical-align: middle;
+	white-space: nowrap;
+	font-family: var(--font-family-sans-serif);
+	font-size: var(--font-size-80);
+	line-height: var(--line-height-100);
 	cursor: pointer;
 	user-select: none;
 	appearance: none;
-	border: none;
-	font-size: var(--font-size-80);
-	line-height: var(--line-height-100);
-	padding: 6px 12px;
-	font-weight: var(--font-weight-bold);
 	-webkit-font-smoothing: antialiased;
-	border-radius: 3px;
-	font-family: var(--font-family-sans-serif);
 
 	&:focus,
 	&:hover,
 	&:link,
 	&:visited {
-		text-decoriation: none;
 		outline: none;
+		text-decoriation: none;
 	}
 }
+
+.Button--big {
+	font-size: var(--font-size-200);
+}
+
+.Button--wide {
+	padding-left: 1.8em;
+	padding-right: 1.8em;
+}
+
 
 /**
  * Based on the buttons from GitHub
  */
 .Button--gradient {
-	padding: 6px 12px;
-	color: #333;
 	background-color: #eee;
 	background-image: linear-gradient(#fcfcfc, #eee);
 	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+	color: #333;
 
 	&:focus {
 		border-color: #51a7e8;
@@ -56,12 +64,12 @@
 	&.is-disabled {
 		&,
 		&:hover {
-			color: rgba(102, 102, 102, 0.5);
-			cursor: default;
+			border-color: rgba(197, 197, 197, 0.5);
 			background-color: rgba(229, 229, 229, 0.5);
 			background-image: none;
-			border-color: rgba(197, 197, 197, 0.5);
 			box-shadow: inset 0 0 0 1px #d5d5d5;
+			color: rgba(102, 102, 102, 0.5);
+			cursor: default;
 		}
 	}
 }
@@ -169,8 +177,8 @@
 		color: var(--color-light);
 
 		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-light) tint(45%));
-			color: color(var(--color-light) tint(45%));
+			box-shadow: inset 0 0 0 1px color(var(--color-light) alpha(50%));
+			color: color(var(--color-light) alpha(50%));
 		}
 	}
 
@@ -203,7 +211,4 @@
 			color: color(var(--color-darkerTint) shade(5%));
 		}
 	}
-}
-
-.Button--wide {
 }

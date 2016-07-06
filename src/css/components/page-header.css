@@ -9,14 +9,14 @@
 }
 
 .PageHeader-content {
+	border-bottom: 1px solid;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	border-bottom: 1px solid;
 }
 
 .PageHeader-titleLink {
-	font-weight: var(--font-weight-bold);
 	text-decoration: none;
+	font-weight: var(--font-weight-bold);
 }
 
 .PageHeader-nav {
@@ -24,9 +24,12 @@
 }
 
 .PageHeader-navItem {
-	text-decoration: none;
-	/*text-transform: uppercase;*/
-	font-size: var(--font-size-90);
-	letter-spacing: 0.5px;
 	padding: 8px 12px;
+	text-decoration: none;
+	letter-spacing: 0.5px;
+	font-size: var(--font-size-90);
+}
+
+.PageHeader-banner {
+	margin-top: 80px;
 }

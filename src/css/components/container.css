@@ -1,21 +1,17 @@
 .Container {
 	position: relative;
+	max-width: 1260px;
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 1260px;
-
 	@media (--range-palm) {
 		padding: 0 5%;
 	}
-
 	@media (--range-hand) {
 		padding: 0 7.5%;
 	}
-
 	@media (--range-lap) {
 		padding: 0 10%;
 	}
-
 	@media (--range-desk) {
 		padding: 0 120px;
 	}
@@ -25,11 +21,9 @@
 	@media (--range-hand) {
 		max-width: 620px;
 	}
-
 	@media (--range-lap) {
 		max-width: 620px;
 	}
-
 	@media (--range-desk) {
 		max-width: 780px;
 	}
