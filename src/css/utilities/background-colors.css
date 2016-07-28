@@ -1,0 +1,48 @@
+/* Background (bg) */
+
+:root {
+	--bg-primary: {
+		background-color: var(--color-primary);
+		color: var(--color-lightText);
+	}
+
+	--bg-dark: {
+		background-color: var(--color-dark);
+		color: var(--color-lightText);
+	}
+
+	--bg-white: {
+		background-color: white;
+		color: var(--color-darkText);
+	}
+
+	--bg-tint: {
+		background-color: var(--color-tint);
+		color: var(--color-darkText);
+	}
+
+	--bg-darkerTint: {
+		background-color: var(--color-darkerTint);
+		color: var(--color-darkText);
+	}
+}
+
+.bg-primary {
+	@apply --bg-primary;
+}
+
+.bg-dark {
+	@apply --bg-dark;
+}
+
+.bg-white {
+	@apply --bg-white;
+}
+
+.bg-tint {
+	@apply --bg-tint;
+}
+
+.bg-darkerTint {
+	@apply --bg-darkerTint;
+}

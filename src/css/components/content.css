@@ -1,5 +1,5 @@
 :root {
-	--Content-color-text: var(--color-light-text);
+	--Content-color-text: var(--color-lightText);
 	--Content-color-link-text: var(--Content-color-text);
 	--Content-color-blockquote-border: var(--color-fog-grey);
 	--Content-color-code-background: rgba(0, 0, 0, 0.04);

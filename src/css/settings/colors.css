@@ -15,22 +15,23 @@
 	--color-blue: #4a90e2;
 
 	/* Functional colors */
-	--color-neutral: var(--color-sand-grey);
-	--color-primary: #3c74d9;
-	--color-primary-text: white;
 	--color-success: #60ae4d;
 	--color-success-text: white;
 	--color-error:   #f34248;
 	--color-error-text: white;
 	--color-warning: #fed443;
 
+	/* Text colors */
+	--color-darkText: #333;
+	--color-darkText-softMuted: color(var(--color-darkText) alpha(0.7));
+	--color-darkText-muted: color(var(--color-darkText) alpha(0.5));
+	--color-lightText: white;
+	--color-lightText-softMuted: color(var(--color-lightText) alpha(0.7));
+	--color-lightText-muted: color(var(--color-lightText) alpha(0.5));
+
 	/* Theme colors */
-	--color-light: white;
-	--color-light-text: #222;
+	--color-primary: #3c74d9;
 	--color-dark: var(--color-charcoal-grey);
-	--color-dark-text: white;
-	--color-tint: var(--color-sand-grey);
-	--color-tint-text: black;
+	--color-tint: #f4f4f4;
 	--color-darkerTint: color(var(--color-tint) blackness(10%));
-	--color-darkerTint-text: black;
 }

@@ -9,6 +9,6 @@
 	}
 }
 
-.u-clearfix {
+.clearfix {
 	@apply --clearfix;
 }

@@ -1,0 +1,29 @@
+/**
+ * Text utilities
+ * ---
+ * Color classnames match the variable name
+ */
+
+.darkText {
+	color: var(--color-darkText);
+}
+
+.darkText-muted {
+	color: var(--color-darkText-muted);
+}
+
+.darkText-softMuted {
+	color: var(--color-darkText-softMuted);
+}
+
+.lightText {
+	color: var(--color-lightText);
+}
+
+.lightText-muted {
+	color: var(--color-lightText-muted);
+}
+
+.lightText-softMuted {
+	color: var(--color-lightText-softMuted);
+}

@@ -35,9 +35,9 @@
  * interval: 60px
  */
 @custom-media --range-hand   (width > 440px) and (width <= 620px);
-@custom-media --range-hand-s (width > 440px) and (width <= 480px);
-@custom-media --range-hand-m (width > 480px) and (width <= 520px);
-@custom-media --range-hand-l (width > 520px) and (width <= 560px);
+@custom-media --range-hand-s (width > 440px) and (width <= 500px);
+@custom-media --range-hand-m (width > 500px) and (width <= 560px);
+@custom-media --range-hand-l (width > 560px) and (width <= 620px);
 
 /**
  * lap
@@ -46,7 +46,7 @@
  * interval: 120px
  */
 @custom-media --range-lap   (width > 620px) and (width <= 980px);
-@custom-media --range-lap-s (width > 620px) and (width <= 720px);
+@custom-media --range-lap-s (width > 620px) and (width <= 740px);
 @custom-media --range-lap-m (width > 740px) and (width <= 860px);
 @custom-media --range-lap-l (width > 860px) and (width <= 980px);
 

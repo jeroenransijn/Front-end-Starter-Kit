@@ -1,0 +1,12 @@
+.uppercase {
+	text-transform: uppercase;
+	letter-spacing: .08em;
+}
+
+.italic {
+	font-style: italic !important;
+}
+
+.bold {
+	font-weight: bold !important;
+}

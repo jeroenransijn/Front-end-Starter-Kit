@@ -32,115 +32,55 @@
 	padding-right: 1.8em;
 }
 
+.Button--solid {
+	&.Button--default {
+		background-color: var(--color-darkerTint);
+		color: var(--color-darkText);
 
-/**
- * Based on the buttons from GitHub
- */
-.Button--gradient {
-	background-color: #eee;
-	background-image: linear-gradient(#fcfcfc, #eee);
-	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-	color: #333;
-
-	&:focus {
-		border-color: #51a7e8;
-		box-shadow: inset 0 0 0 1px #51a7e8, 0 0 5px rgba(81, 167, 232, 0.5);
-	}
-
-	&:hover,
-	&:active {
-		background-color: #ddd;
-		background-image: linear-gradient(#eee, #ddd);
-	}
-
-	&:active,
-	&.is-selected {
-		background-color: #dcdcdc;
-		background-image: none;
-		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-	}
-
-	&:disabled,
-	&.is-disabled {
-		&,
-		&:hover {
-			border-color: rgba(197, 197, 197, 0.5);
-			background-color: rgba(229, 229, 229, 0.5);
-			background-image: none;
-			box-shadow: inset 0 0 0 1px #d5d5d5;
-			color: rgba(102, 102, 102, 0.5);
-			cursor: default;
+		&:active {
+			background-color: color(var(--color-darkerTint) tint(15%));
 		}
 	}
-}
 
-.Button--solid {
 	&.Button--primary {
 		background-color: var(--color-primary);
-		color: var(--color-primary-text);
+		color: var(--color-lightText);
 
 		&:active {
 			background-color: color(var(--color-primary) tint(15%));
 		}
 	}
 
-	&.Button--success {
-		background-color: var(--color-success);
-		color: var(--color-success-text);
+	&.Button--white {
+		background-color: white;
+		color: var(--color-darkText);
 
 		&:active {
-			background-color: color(var(--color-success) tint(15%));
-		}
-	}
-
-	&.Button--error {
-		background-color: var(--color-error);
-		color: var(--color-error-text);
-
-		&:active {
-			background-color: color(var(--color-error) tint(20%));
-		}
-	}
-
-	&.Button--light {
-		background-color: var(--color-light);
-		color: var(--color-light-text);
-
-		&:active {
-			background-color: color(var(--color-light) shade(5%));
+			background-color: color(var(--color-primary) blackness(10%));
 		}
 	}
 
 	&.Button--dark {
 		background-color: var(--color-dark);
-		color: var(--color-dark-text);
+		color: var(--color-lightText);
 
 		&:active {
 			background-color: color(var(--color-dark) tint(15%));
-		}
-	}
-
-	&.Button--tint {
-		background-color: var(--color-tint);
-		color: var(--color-tint-text);
-
-		&:active {
-			background-color: color(var(--color-tint) shade(5%));
-		}
-	}
-
-	&.Button--darkerTint {
-		background-color: var(--color-darkerTint);
-		color: var(--color-darkerTint-text);
-
-		&:active {
-			background-color: color(var(--color-darkerTint) shade(5%));
 		}
 	}
 }
 
 .Button--outline {
 	background: transparent;
+
+	&.Button--default {
+		background-color: var(--color-darkerTint);
+		color: var(--color-darkText);
+
+		&:active {
+			background-color: color(var(--color-darkerTint) tint(15%));
+		}
+	}
 
 	&.Button--primary {
 		box-shadow: inset 0 0 0 1px var(--color-primary);
@@ -152,33 +92,13 @@
 		}
 	}
 
-	&.Button--success {
-		box-shadow: inset 0 0 0 1px var(--color-success);
-		color: var(--color-success);
+	&.Button--white {
+		box-shadow: inset 0 0 0 1px white;
+		color: white;
 
 		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-success) tint(45%));
-			color: color(var(--color-success) tint(45%));
-		}
-	}
-
-	&.Button--error {
-		box-shadow: inset 0 0 0 1px var(--color-error);
-		color: var(--color-error);
-
-		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-error) tint(45%));
-			color: color(var(--color-error) tint(45%));
-		}
-	}
-
-	&.Button--light {
-		box-shadow: inset 0 0 0 1px var(--color-light);
-		color: var(--color-light);
-
-		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-light) alpha(50%));
-			color: color(var(--color-light) alpha(50%));
+			box-shadow: inset 0 0 0 1px color(white alpha(50%));
+			color: color(white alpha(50%));
 		}
 	}
 
@@ -189,26 +109,6 @@
 		&:active {
 			box-shadow: inset 0 0 0 1px color(var(--color-dark) tint(45%));
 			color: color(var(--color-dark) tint(45%));
-		}
-	}
-
-	&.Button--tint {
-		box-shadow: inset 0 0 0 1px var(--color-tint);
-		color: var(--color-tint);
-
-		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-tint) shade(5%));
-			color: color(var(--color-tint) shade(5%));
-		}
-	}
-
-	&.Button--darkerTint {
-		box-shadow: inset 0 0 0 1px var(--color-darkerTint);
-		color: var(--color-darkerTint);
-
-		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-darkerTint) shade(5%));
-			color: color(var(--color-darkerTint) shade(5%));
 		}
 	}
 }

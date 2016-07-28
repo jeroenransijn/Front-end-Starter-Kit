@@ -1,7 +1,7 @@
 .Pane {
 	@apply --clearfix;
 }
-
+/*
 .Pane--rounded {
 	border-radius: 3px;
 }
@@ -47,4 +47,4 @@
 
 .Pane-content {
 	margin: 1em;
-}
+}*/
