@@ -18,12 +18,15 @@
 
 .lightText {
 	color: var(--color-lightText);
+	-webkit-font-smoothing: antialiased;
 }
 
 .lightText-muted {
 	color: var(--color-lightText-muted);
+	-webkit-font-smoothing: antialiased;
 }
 
 .lightText-softMuted {
 	color: var(--color-lightText-softMuted);
+	-webkit-font-smoothing: antialiased;
 }

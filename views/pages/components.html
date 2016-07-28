@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+
+{% block main %}
+<section>
+
+	<div class="clearfix bg-gradient-servQuick lightText">
+		<div class="Container vs-hero">
+			<div class="Content Content--titleGroup Content--center">
+				<h1>Expressful</h1>
+				<p>
+					Server &amp; Front-end Framework from the Future.<br/>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix bg-tint">
+		<div class="Container Container--narrow vs-large">
+			<div class="Content">
+				<h1>Getting Started</h1>
+				<p>
+					Expressful sets up a professional website for you. You just write <strong>HTML</strong> and <strong>CSS</strong>.
+				</p>
+				<p>
+					1. Install <a href="https://nodejs.org/en/download/">Node</a>.
+				</p>
+				<p>
+					2. Install the project generator through the terminal. <code>sudo</code> might be neccesary.
+				</p>
+				<pre><code>$ npm install -g create-expressful-app</code></pre>
+				<p>
+					3. Run the <code>create-expressful-app</code> command followed by your project name.
+				</p>
+				<pre><code>$ create-expressful-app my-website</code></pre>
+				<p>
+					4. Go to your newly created project directory and run the server.
+				</p>
+				<pre><code>$ cd my-website
+$ npm run dev</code></pre>
+
+				<p>
+					5. Learn more about Expressful.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	{% include "partials/components.html" %}
+	{% include "partials/utilities.html" %}
+</section>
+{% endblock %}

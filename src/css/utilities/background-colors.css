@@ -4,11 +4,13 @@
 	--bg-primary: {
 		background-color: var(--color-primary);
 		color: var(--color-lightText);
+		-webkit-font-smoothing: antialiased;
 	}
 
 	--bg-dark: {
 		background-color: var(--color-dark);
 		color: var(--color-lightText);
+		-webkit-font-smoothing: antialiased;
 	}
 
 	--bg-white: {

@@ -22,14 +22,14 @@
 	}
 
 	& h1 {
-		font-weight: var(--font-weight-bold);
+		font-weight: var(--font-weight-book);
 		line-height: var(--line-height-30);
 
 		@media (--range-palm) {
-			font-size: var(--font-size-300);
+			font-size: var(--font-size-400);
 		}
 		@media (--range-hand) {
-			font-size: var(--font-size-400);
+			font-size: var(--font-size-500);
 		}
 		@media (--range-lap) {
 			letter-spacing: -0.2px;
@@ -200,13 +200,45 @@
 }
 
 .Content--center {
-	/* use .text-center to always align to the center */
-	@media (--range-lap, --range-desk) {
-		text-align: center;
+	text-align: center;
+
+	&.Content--titleGroup {
+		& p {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 
 .Content--titleGroup {
+	@media (--range-palm), (--range-hand) {
+		text-align: center;
+	}
+
+	& p {
+		opacity: 0.7;
+
+		@media (--range-lap) {
+			max-width: 32em;
+			font-size: var(--font-size-100);
+		}
+		@media (--range-desk) {
+			max-width: 32em;
+			font-size: var(--font-size-200);
+		}
+	}
+
+	& h1 {
+		font-weight: var(--font-weight-book);
+
+		@media (--range-lap) {
+			font-size: var(--font-size-600);
+		}
+		@media (--range-desk) {
+			font-size: var(--font-size-700);
+		}
+	}
+
 	& h1,
 	& h2,
 	& h3,
@@ -214,18 +246,7 @@
 	& h5,
 	& h6,
 	& p {
-		&:first-child {
-			margin-bottom: 0;
-		}
-
-		& + h1,
-		& + h2,
-		& + h3,
-		& + h4,
-		& + h5,
-		& + h6,
-		& + p {
-			margin-top: 0;
-		}
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
 	}
 }

@@ -1,0 +1,78 @@
+/* Vertical Spacing (vs) */
+:root {
+	--vs-small: {
+		@media (--range-palm), (--range-hand) {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		@media (--range-lap), (--range-desk) {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
+
+	--vs-medium: {
+		@media (--range-palm), (--range-hand) {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		@media (--range-lap), (--range-desk) {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+
+	--vs-large: {
+		@media (--range-palm) {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		@media (--range-hand) {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		@media (--range-lap) {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+		@media (--range-desk) {
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+	}
+
+	--vs-hero: {
+		@media (--range-palm) {
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+		@media (--range-hand) {
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+		@media (--range-lap) {
+			margin-top: 120px;
+			margin-bottom: 120px;
+		}
+		@media (--range-desk) {
+			margin-top: 180px;
+			margin-bottom: 180px;
+		}
+	}
+}
+
+.vs-small {
+	@apply --vs-small;
+}
+
+.vs-medium {
+	@apply --vs-medium;
+}
+
+.vs-large {
+	@apply --vs-large;
+}
+
+.vs-hero {
+	@apply --vs-hero;
+}

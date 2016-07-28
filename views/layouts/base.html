@@ -18,24 +18,10 @@
 		<link rel="shortcut icon" href="/images/favicon.ico"> -->
 	</head>
 	<body class="Page Page--hasMaxWidth">
-		<header class="Page-header PageHeader {{ PageHeaderClasses }}">
-			<div class="Container">
-				<div class="PageHeader-content PageHeader-content--borderBottom">
-					<a href="/" class="PageHeader-titleLink">Front-end Starter Kit</a>
-					<nav class="PageHeader-nav">
-						<a href="/grid" class="PageHeader-navItem">Grid</a>
-						<a href="/hero" class="PageHeader-navItem">Hero</a>
-						<a href="/controls" class="PageHeader-navItem">Controls</a>
-					</nav>
-				</div>
-				{% block hero %}{% endblock %}
-			</div>
-		</header>
-
 		<main role="main" class="Page-content">
 			{% block main %}{% endblock %}
 		</main>
-		
+
 		{% include "partials/page-footer.html" %}
 	</body>
 </html>

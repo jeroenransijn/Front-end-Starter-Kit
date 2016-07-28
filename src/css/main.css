@@ -1,5 +1,6 @@
 /* Settings */
 @import 'settings/colors';
+@import 'settings/gradients';
 @import 'settings/font-families';
 @import 'settings/font-sizes';
 @import 'settings/font-weights';
@@ -9,8 +10,10 @@
 /* Utilities */
 @import 'utilities/clearfix';
 @import 'utilities/background-colors';
+@import 'utilities/background-gradients';
 @import 'utilities/text-colors';
 @import 'utilities/text-formatting';
+@import 'utilities/vertical-spacing';
 
 /* Reset */
 @import 'reset/full-reset';
@@ -25,7 +28,6 @@
 
 /* Components */
 @import 'components/grid';
-@import 'components/pane';
 @import 'components/card';
 @import 'components/page';
 @import 'components/button';
@@ -33,6 +35,4 @@
 @import 'components/content';
 @import 'components/hero';
 @import 'components/banner';
-@import 'components/phone-screenshot-holder';
-@import 'components/page-header';
 @import 'components/button';

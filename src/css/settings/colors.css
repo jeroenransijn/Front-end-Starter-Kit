@@ -23,8 +23,8 @@
 
 	/* Text colors */
 	--color-darkText: #333;
-	--color-darkText-softMuted: color(var(--color-darkText) alpha(0.7));
-	--color-darkText-muted: color(var(--color-darkText) alpha(0.5));
+	--color-darkText-softMuted: color(black alpha(0.8));
+	--color-darkText-muted: color(black alpha(0.5));
 	--color-lightText: white;
 	--color-lightText-softMuted: color(var(--color-lightText) alpha(0.7));
 	--color-lightText-muted: color(var(--color-lightText) alpha(0.5));

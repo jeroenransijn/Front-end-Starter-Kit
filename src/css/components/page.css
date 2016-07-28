@@ -17,6 +17,9 @@
 	font-family: var(--font-family-sans-serif);
 	line-height: var(--line-height-100);
 
+	@media (--range-palm) {
+		font-size: var(--font-size-70);
+	}
 	@media (--range-hand) {
 		font-size: var(--font-size-80);
 	}

@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block main %}
+<section class="Pane">
+	<div class="Container vs-large">
+		<div class="Content Content--titleGroup text-center vs-large">
+			<h1>Buttons</h1>
+			<p>
+				Buttons in Expressful are easy to compose with modifiers.
+				The block name is <code>.Button</code>
+				which works on both <code>a</code> and <code>button</code> tags.
+			</p>
+		</div>
+
+		{% include "partials/solid-and-outline-buttons.html" %}
+		{% include "partials/button-variations.html" %}
+	</div>
+</section>
+{% endblock %}
