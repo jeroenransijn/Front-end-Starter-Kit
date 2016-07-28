@@ -8,6 +8,9 @@
 
 /* Utilities */
 @import 'utilities/clearfix';
+@import 'utilities/background-colors';
+@import 'utilities/text-colors';
+@import 'utilities/text-formatting';
 
 /* Reset */
 @import 'reset/full-reset';
@@ -23,6 +26,7 @@
 /* Components */
 @import 'components/grid';
 @import 'components/pane';
+@import 'components/card';
 @import 'components/page';
 @import 'components/button';
 @import 'components/container';

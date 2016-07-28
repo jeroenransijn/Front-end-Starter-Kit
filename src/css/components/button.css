@@ -23,13 +23,42 @@
 	}
 }
 
+.Button--uppercase {
+	padding: 0.9em 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: var(--font-weight-semi-bold);
+}
+
 .Button--big {
-	font-size: var(--font-size-200);
+	@media (--range-palm), (--range-hand), (--range-lap-s) {
+		font-size: var(--font-size-100);
+
+		&.Button--uppercase {
+			font-size: var(--font-size-90);
+		}
+	}
+	@media (--range-lap-m), (--range-lap-l), (--range-desk) {
+		font-size: var(--font-size-200);
+
+		&.Button--uppercase {
+			font-size: var(--font-size-100);
+		}
+	}
 }
 
 .Button--wide {
 	padding-left: 1.8em;
 	padding-right: 1.8em;
+
+	&.Button--uppercase {
+		padding-left: 2.6em;
+		padding-right: 2.6em;
+	}
+}
+
+.Button--minWidth {
+	min-width: 120px;
 }
 
 .Button--solid {
@@ -56,7 +85,7 @@
 		color: var(--color-darkText);
 
 		&:active {
-			background-color: color(var(--color-primary) blackness(10%));
+			background-color: color(white blackness(10%));
 		}
 	}
 
@@ -73,42 +102,50 @@
 .Button--outline {
 	background: transparent;
 
+	/* dark and default same when outlined */
+	&.Button--dark,
 	&.Button--default {
-		background-color: var(--color-darkerTint);
-		color: var(--color-darkText);
+		box-shadow: inset 0 0 0 1px color(var(--color-dark) alpha(50%));
+		color: var(--color-dark);
+
+		&:hover {
+			background-color: color(var(--color-dark) alpha(3%));
+			box-shadow: inset 0 0 0 1px color(var(--color-dark) alpha(80%));
+		}
 
 		&:active {
-			background-color: color(var(--color-darkerTint) tint(15%));
+			box-shadow: inset 0 0 0 1px color(var(--color-dark) tint(45%));
+			color: color(var(--color-dark) tint(30%));
 		}
 	}
 
 	&.Button--primary {
-		box-shadow: inset 0 0 0 1px var(--color-primary);
+		box-shadow: inset 0 0 0 1px color(var(--color-primary) alpha(50%));
 		color: var(--color-primary);
+
+		&:hover {
+			background-color: color(var(--color-primary) alpha(3%));
+			box-shadow: inset 0 0 0 1px color(var(--color-primary) alpha(80%));
+		}
 
 		&:active {
 			box-shadow: inset 0 0 0 1px color(var(--color-primary) tint(45%));
-			color: color(var(--color-primary) tint(45%));
+			color: color(var(--color-primary) tint(30%));
 		}
 	}
 
 	&.Button--white {
-		box-shadow: inset 0 0 0 1px white;
+		box-shadow: inset 0 0 0 1px color(white alpha(50%));
 		color: white;
+
+		&:hover {
+			background-color: color(white alpha(3%));
+			box-shadow: inset 0 0 0 1px color(white alpha(80%));
+		}
 
 		&:active {
 			box-shadow: inset 0 0 0 1px color(white alpha(50%));
 			color: color(white alpha(50%));
-		}
-	}
-
-	&.Button--dark {
-		box-shadow: inset 0 0 0 1px var(--color-dark);
-		color: var(--color-dark);
-
-		&:active {
-			box-shadow: inset 0 0 0 1px color(var(--color-dark) tint(45%));
-			color: color(var(--color-dark) tint(45%));
 		}
 	}
 }

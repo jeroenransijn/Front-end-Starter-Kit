@@ -1,12 +1,14 @@
+:root {
+	--uppercase: {
+		text-transform: uppercase;
+		letter-spacing: .08em;
+	}
+}
+
 .uppercase {
-	text-transform: uppercase;
-	letter-spacing: .08em;
+	@apply --uppercase;
 }
 
-.italic {
-	font-style: italic !important;
-}
-
-.bold {
-	font-weight: bold !important;
+.text-center {
+	text-align: center;
 }
