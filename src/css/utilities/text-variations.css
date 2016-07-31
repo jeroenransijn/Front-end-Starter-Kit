@@ -4,29 +4,44 @@
  * Color classnames match the variable name
  */
 
-.darkText {
+:root {
+	--uppercase: {
+		text-transform: uppercase;
+		letter-spacing: .08em;
+	}
+}
+
+.text-uppercase {
+	@apply --uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-dark {
 	color: var(--color-darkText);
 }
 
-.darkText-muted {
+.text-darkMuted {
 	color: var(--color-darkText-muted);
 }
 
-.darkText-softMuted {
+.text-darkSoftMuted {
 	color: var(--color-darkText-softMuted);
 }
 
-.lightText {
+.text-light {
 	color: var(--color-lightText);
 	-webkit-font-smoothing: antialiased;
 }
 
-.lightText-muted {
+.text-lightMuted {
 	color: var(--color-lightText-muted);
 	-webkit-font-smoothing: antialiased;
 }
 
-.lightText-softMuted {
+.text-lightSoftMuted {
 	color: var(--color-lightText-softMuted);
 	-webkit-font-smoothing: antialiased;
 }

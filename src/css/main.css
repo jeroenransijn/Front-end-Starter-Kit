@@ -11,8 +11,7 @@
 @import 'utilities/clearfix';
 @import 'utilities/background-colors';
 @import 'utilities/background-gradients';
-@import 'utilities/text-colors';
-@import 'utilities/text-formatting';
+@import 'utilities/text-variations';
 @import 'utilities/vertical-spacing';
 
 /* Reset */
