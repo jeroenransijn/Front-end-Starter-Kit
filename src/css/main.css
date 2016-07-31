@@ -8,11 +8,12 @@
 @import 'settings/media-ranges';
 
 /* Utilities */
+@import 'utilities/responsive-rem';
 @import 'utilities/clearfix';
-@import 'utilities/background-colors';
-@import 'utilities/background-gradients';
+@import 'utilities/background';
 @import 'utilities/text';
-@import 'utilities/vertical-spacing';
+@import 'utilities/color';
+@import 'utilities/spacing';
 
 /* Reset */
 @import 'reset/full-reset';

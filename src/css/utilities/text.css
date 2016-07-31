@@ -19,29 +19,6 @@
 	text-align: center;
 }
 
-.text-dark {
-	color: var(--color-darkText);
-}
-
-.text-darkMuted {
-	color: var(--color-darkText-muted);
-}
-
-.text-darkSoftMuted {
-	color: var(--color-darkText-softMuted);
-}
-
-.text-light {
-	color: var(--color-lightText);
-	-webkit-font-smoothing: antialiased;
-}
-
-.text-lightMuted {
-	color: var(--color-lightText-muted);
-	-webkit-font-smoothing: antialiased;
-}
-
-.text-lightSoftMuted {
-	color: var(--color-lightText-softMuted);
-	-webkit-font-smoothing: antialiased;
+.text-default-size {
+	font-size: 100% !important;
 }

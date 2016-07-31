@@ -1,0 +1,26 @@
+.color-dark {
+	color: var(--color-darkText);
+}
+
+.color-darkMuted {
+	color: var(--color-darkText-muted);
+}
+
+.color-darkSoftMuted {
+	color: var(--color-darkText-softMuted);
+}
+
+.color-light {
+	color: var(--color-lightText);
+	-webkit-font-smoothing: antialiased;
+}
+
+.color-lightMuted {
+	color: var(--color-lightText-muted);
+	-webkit-font-smoothing: antialiased;
+}
+
+.color-lightSoftMuted {
+	color: var(--color-lightText-softMuted);
+	-webkit-font-smoothing: antialiased;
+}

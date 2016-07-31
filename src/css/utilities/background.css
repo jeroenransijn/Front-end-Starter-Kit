@@ -27,6 +27,10 @@
 		background-color: var(--color-darkerTint);
 		color: var(--color-darkText);
 	}
+
+	--bg-gradient-servQuick: {
+		background: var(--gradient-servQuick);
+	}
 }
 
 .bg-primary {
@@ -47,4 +51,8 @@
 
 .bg-darkerTint {
 	@apply --bg-darkerTint;
+}
+
+.bg-gradient-servQuick {
+	@apply --bg-gradient-servQuick;
 }

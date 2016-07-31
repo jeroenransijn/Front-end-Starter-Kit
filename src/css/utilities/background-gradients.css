@@ -1,9 +1,0 @@
-:root {
-	--bg-gradient-servQuick: {
-		background: var(--gradient-servQuick);
-	}
-}
-
-.bg-gradient-servQuick {
-	@apply --bg-gradient-servQuick;
-}

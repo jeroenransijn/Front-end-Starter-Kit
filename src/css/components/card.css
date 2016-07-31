@@ -10,7 +10,6 @@ a.Card {
 	display: block;
 
 	&:hover {
-		/*background-color: color(var(--color-primary) alpha(3%));*/
 		box-shadow: 0 0 0 1px color(var(--color-primary) alpha(25%)), 0 1px 3px rgba(63, 63, 68, .2), 0 1px 2px rgba(0, 0, 0, .05);
 	}
 
@@ -21,5 +20,9 @@ a.Card {
 }
 
 .Card-content {
-	margin: 1.5em;
+	margin: 1.5rem;
+
+	@media (--range-palm) {
+		margin: 2rem;
+	}
 }

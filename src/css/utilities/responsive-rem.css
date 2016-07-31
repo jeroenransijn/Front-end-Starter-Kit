@@ -1,0 +1,22 @@
+/**
+ * Responsive rem hack
+ * ---
+ * Makes the `rem` unit behave like a dynamic value based on the viewport, with a max width.
+ * This makes it easy to apply dynamic values to margin and paddings.
+ * warning, `rem` becomes useless for font-sizes.
+ *
+ * Usage:
+ *
+ * .vertical-spacing {
+ *   margin-top: 10rem;
+ *   margin-bottom: 10rem;
+ * }
+ */
+html {
+	@media (--range-palm), (--range-hand), (--range-lap) {
+		font-size: 1.6vw !important;
+	}
+	@media (--range-desk) {
+		font-size: 16px !important;
+	}
+}
